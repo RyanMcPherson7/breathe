@@ -27,6 +27,8 @@
     "react/react-in-jsx-scope": "off",
     "react/function-component-definition": "off",
     "import/no-named-as-default": "off",
-    "react/no-unescaped-entities": "off"
+    "react/no-unescaped-entities": "off",
+    "import/no-extraneous-dependencies": "off",
+    "arrow-body-style": "off"
   }
 }
