@@ -1,0 +1,32 @@
+{
+  "env": {
+    "browser": true
+  },
+  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 13,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "prettier"],
+  "rules": {
+    "prettier/prettier": [
+      "warn",
+      {
+        "singleQuote": true,
+        "semi": false,
+        "endOfLine": "auto",
+        "trailingComma": "none"
+      }
+    ],
+    "no-unused-vars": "warn",
+    "func-names": "off",
+    "spaced-comment": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react/function-component-definition": "off",
+    "import/no-named-as-default": "off",
+    "react/no-unescaped-entities": "off"
+  }
+}
