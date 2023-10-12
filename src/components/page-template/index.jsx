@@ -1,12 +1,9 @@
-import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import PropTypes from 'prop-types'
-import { backgroundImages } from '../../constants'
 import './index.css'
 
 const index = ({ content: Content, designVersion }) => {
-  const [backgroundImage, setBackgroundImage] = useState(
-    backgroundImages.purple
-  )
+  const backgroundImage = useSelector((state) => state.form.backgroundImage)
 
   return (
     <>
@@ -18,10 +15,7 @@ const index = ({ content: Content, designVersion }) => {
       />
 
       <div id="content-wrapper">
-        <Content
-          designVersion={designVersion ?? ''}
-          setBackgroundImage={setBackgroundImage}
-        />
+        <Content designVersion={designVersion ?? ''} />
       </div>
     </>
   )
