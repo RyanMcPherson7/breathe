@@ -1,15 +1,14 @@
 import { Route, Routes } from 'react-router-dom'
-import DesignA from './design-a-components/DesignA'
-import DesignB from './design-b-components/DesignB'
+import PageTemplate from './components/page-template'
 import './App.css'
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<DesignA />} />
-      <Route path="/A" element={<DesignA />} />
-      <Route path="/B" element={<DesignB />} />
-      <Route path="*" element={<DesignA />} />
+      <Route path="/" element={<PageTemplate designVersion="A" />} />
+      <Route path="/A" element={<PageTemplate designVersion="A" />} />
+      <Route path="/B" element={<PageTemplate designVersion="B" />} />
+      <Route path="*" element={<PageTemplate designVersion="A" />} />
     </Routes>
   )
 }
