@@ -1,6 +1,8 @@
 import { Route, Routes } from 'react-router-dom'
 import PageTemplate from './components/page-template'
 import Welcome from './components/welcome'
+import FormA from './components/form-a'
+import FormB from './components/form-b'
 import './App.css'
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
         path="/B"
         element={<PageTemplate designVersion="B" content={Welcome} />}
       />
+      <Route path="/A/form" element={<PageTemplate content={FormA} />} />
+      <Route path="/B/form" element={<PageTemplate content={FormB} />} />
       <Route
         path="*"
         element={<PageTemplate designVersion="A" content={Welcome} />}

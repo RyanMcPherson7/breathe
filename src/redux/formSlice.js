@@ -1,12 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { backgroundImages } from '../constants'
 
 /* eslint-disable no-param-reassign */
 
 export const formSlice = createSlice({
   name: 'form',
   initialState: {
-    backgroundImage: backgroundImages.purple,
     color: 'purple',
     stressLevel: '',
     rootCause: '',
@@ -14,9 +12,6 @@ export const formSlice = createSlice({
     age: ''
   },
   reducers: {
-    setBackgroundImage: (state, action) => {
-      state.backgroundImage = action.payload
-    },
     setColor: (state, action) => {
       state.color = action.payload
     },
@@ -36,7 +31,6 @@ export const formSlice = createSlice({
 })
 
 export const {
-  setBackgroundImage,
   setColor,
   setStressLevel,
   setRootCause,

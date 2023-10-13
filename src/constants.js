@@ -1,4 +1,9 @@
 export const backgroundImages = {
+  red: '/background-purple.jpg',
+  orange: '/background-purple.jpg',
+  yellow: '/background-purple.jpg',
+  green: '/background-purple.jpg',
+  blue: '/background-purple.jpg',
   purple: '/background-purple.jpg'
 }
 
