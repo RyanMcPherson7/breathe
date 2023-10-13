@@ -3,6 +3,27 @@ input[type='range'] {
   width: 200px;
 }
 
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.slider-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-purple);
+  width: 35px;
+  height: 35px;
+  border-radius: 100px;
+}
+
+.slider-value p {
+  color: var(--color-white)
+}
+
 @media (hover: hover) {
   input[type='range']:hover {
     cursor: pointer;

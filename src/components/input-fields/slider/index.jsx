@@ -14,13 +14,18 @@ const index = ({ min, max, state, updateState }) => {
   )
 
   return (
-    <input
-      type="range"
-      min={min}
-      max={max}
-      value={state}
-      onChange={handleSliderChange}
-    />
+    <div className="slider-container">
+      <div className="slider-value">
+        <p>{state}</p>
+      </div>
+      <input
+        type="range"
+        min={min}
+        max={max}
+        value={state}
+        onChange={handleSliderChange}
+      />
+    </div>
   )
 }
 

@@ -4,7 +4,7 @@ import './index.css'
 const index = ({ promptText, inputField }) => {
   return (
     <div id="question-container">
-      <p>{promptText}</p>
+      <p className="prompt-text">{promptText}</p>
       {inputField}
     </div>
   )
