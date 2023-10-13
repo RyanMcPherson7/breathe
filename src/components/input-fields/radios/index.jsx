@@ -1,13 +1,17 @@
 import PropTypes from 'prop-types'
+import { useCallback } from 'react'
 import { useDispatch } from 'react-redux'
 import './index.css'
 
 const index = ({ options, state, updateState }) => {
   const dispatch = useDispatch()
 
-  const handleRadioSelect = (event) => {
-    dispatch(updateState(event.target.value))
-  }
+  const handleRadioSelect = useCallback(
+    (event) => {
+      dispatch(updateState(event.target.value))
+    },
+    [dispatch, updateState]
+  )
 
   return (
     <div className="radio-group">
