@@ -11,6 +11,7 @@ import {
 import Button from '../button'
 import Radios from '../input-fields/radios'
 import Dropdown from '../input-fields/dropdown'
+import Slider from '../input-fields/slider'
 import './index.css'
 
 const index = () => {
@@ -33,7 +34,14 @@ const index = () => {
       />
       <Question
         promptText="2. On a scale of 1 to 10, how stressed did you feel today?"
-        inputField={<div>put input field here</div>}
+        inputField={
+          <Slider
+            min={1}
+            max={10}
+            state={stressLevel}
+            updateState={setStressLevel}
+          />
+        }
       />
       <Question
         promptText="3. What do you think is the root cause of your stress?"

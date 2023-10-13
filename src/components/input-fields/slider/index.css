@@ -1,0 +1,12 @@
+input[type='range'] {
+  border: none;
+  width: 200px;
+}
+
+@media (hover: hover) {
+  input[type='range']:hover {
+    cursor: pointer;
+    filter: brightness(90%);
+    transition: filter 0.2s ease-in-out;
+  }
+}
