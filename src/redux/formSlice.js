@@ -7,7 +7,7 @@ export const formSlice = createSlice({
   name: 'form',
   initialState: {
     backgroundImage: backgroundImages.purple,
-    color: '',
+    color: 'purple',
     stressLevel: '',
     rootCause: '',
     meditationExperience: '',
