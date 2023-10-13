@@ -1,0 +1,13 @@
+select {
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-black);
+  border-radius: 10px;
+  padding: 3px 7px;
+  border: none;
+}
+
+@media (hover: hover) {
+  select:hover {
+    cursor: pointer;
+  }
+}

@@ -10,6 +10,7 @@ import {
 } from '../../redux/formSlice'
 import Button from '../button'
 import Radios from '../input-fields/radios'
+import Dropdown from '../input-fields/dropdown'
 import './index.css'
 
 const index = () => {
@@ -36,7 +37,20 @@ const index = () => {
       />
       <Question
         promptText="3. What do you think is the root cause of your stress?"
-        inputField={<div>put input field here</div>}
+        inputField={
+          <Dropdown
+            options={[
+              'School or work',
+              'Finances',
+              'Health issues',
+              'Personal relationships',
+              'Intrapersonal (within self)',
+              'Other',
+              `I don't know`
+            ]}
+            updateState={setRootCause}
+          />
+        }
       />
       <Question
         promptText="4. Have you meditated before?"

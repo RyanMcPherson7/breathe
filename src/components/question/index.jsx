@@ -13,7 +13,6 @@ const index = ({ promptText, inputField }) => {
 index.propTypes = {
   promptText: PropTypes.string.isRequired,
   inputField: PropTypes.node.isRequired,
-  updateState: PropTypes.func.isRequired
 }
 
 export default index
