@@ -9,6 +9,7 @@ import {
   setAge
 } from '../../redux/formSlice'
 import Button from '../button'
+import Radios from '../input-fields/radios'
 import './index.css'
 
 const index = () => {
@@ -27,28 +28,35 @@ const index = () => {
       <h2>Let's take a breathe.</h2>
       <Question
         promptText="1. What color best describes your mood today"
-        inputField={() => <div>put input field here</div>}
-        updateState={setColor}
+        inputField={<div>put input field here</div>}
       />
       <Question
         promptText="2. On a scale of 1 to 10, how stressed did you feel today?"
-        inputField={() => <div>put input field here</div>}
-        updateState={setStressLevel}
+        inputField={<div>put input field here</div>}
       />
       <Question
         promptText="3. What do you think is the root cause of your stress?"
-        inputField={() => <div>put input field here</div>}
-        updateState={setRootCause}
+        inputField={<div>put input field here</div>}
       />
       <Question
         promptText="4. Have you meditated before?"
-        inputField={() => <div>put input field here</div>}
-        updateState={setMeditationExperience}
+        inputField={
+          <Radios
+            options={['Never', `I've tried it`, 'Often', 'Every day']}
+            state={meditationExperience}
+            updateState={setMeditationExperience}
+          />
+        }
       />
       <Question
         promptText="5: How old are you?"
-        inputField={() => <div>put input field here</div>}
-        updateState={setAge}
+        inputField={
+          <Radios
+            options={['< 18', '18 - 25', '26 - 40', '41+']}
+            state={age}
+            updateState={setAge}
+          />
+        }
       />
       <Button
         handleClick={handleFormSubmit}

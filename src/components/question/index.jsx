@@ -1,18 +1,18 @@
 import PropTypes from 'prop-types'
 import './index.css'
 
-const index = ({ promptText, inputField: InputField, updateState }) => {
+const index = ({ promptText, inputField }) => {
   return (
-    <div className="question-container">
+    <div id="question-container">
       <p>{promptText}</p>
-      <InputField updateState={updateState} />
+      {inputField}
     </div>
   )
 }
 
 index.propTypes = {
   promptText: PropTypes.string.isRequired,
-  inputField: PropTypes.func.isRequired,
+  inputField: PropTypes.node.isRequired,
   updateState: PropTypes.func.isRequired
 }
 
