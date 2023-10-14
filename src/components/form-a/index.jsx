@@ -51,7 +51,7 @@ const index = () => {
       return
     }
 
-    navigate('/recommendation')
+    navigate('/A/recommendation')
   }, [color, stressLevel, rootCause, meditationExperience, age])
 
   return (
