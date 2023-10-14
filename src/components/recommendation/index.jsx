@@ -1,30 +1,30 @@
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useCallback } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { FaRedoAlt } from 'react-icons/fa'
 import { IoMdFlower } from 'react-icons/io'
 import { AiFillClockCircle } from 'react-icons/ai'
 import { MdNumbers } from 'react-icons/md'
 import { BiSolidGroup } from 'react-icons/bi'
 import Button from '../button'
+import { colorsHex } from '../../constants'
 import {
-  setColor,
   setStressLevel,
   setRootCause,
   setMeditationExperience,
   setAge
 } from '../../redux/formSlice'
-import { colors } from '../../constants'
 import './index.css'
 
 const index = () => {
   const navigate = useNavigate()
   const location = useLocation()
   const dispatch = useDispatch()
+  const color = useSelector((state) => state.form.color)
 
   const handleResetClick = useCallback(() => {
+
     // reset form
-    dispatch(setColor(colors.purple))
     dispatch(setStressLevel('5'))
     dispatch(setRootCause(''))
     dispatch(setMeditationExperience(''))
@@ -41,19 +41,25 @@ const index = () => {
         icon={FaRedoAlt}
         isGradient
       />
-      <div className="recommendation">
+      <div
+        className="recommendation"
+        style={{
+          background: `linear-gradient(130deg, ${colorsHex.brandPurple} 50%, ${colorsHex[color]} 100%)`
+        }}
+      >
         <h4>What we recommend</h4>
         <p>
-          <IoMdFlower /> Mediation style
+          <IoMdFlower className="recommendation-icon" /> Mediation style
         </p>
         <p>
-          <AiFillClockCircle /> Session duration
+          <AiFillClockCircle className="recommendation-icon" /> Session duration
         </p>
         <p>
-          <MdNumbers /> Number of sessions per day
+          <MdNumbers className="recommendation-icon" /> Number of sessions per
+          day
         </p>
         <p>
-          <BiSolidGroup /> Solo or group
+          <BiSolidGroup className="recommendation-icon" /> Solo or group
         </p>
       </div>
     </div>

@@ -41,10 +41,10 @@ const index = () => {
 
     if (missingInputField.length !== 0) {
       let missingInputMessage =
-        'Please fill out the following questions so we can make an accurate recommendation: \n'
+        'Please fill out the following questions:\n'
 
       missingInputField.forEach((field) => {
-        missingInputMessage += `- ${field}\n`
+        missingInputMessage += `${field}\n`
       })
 
       alert(missingInputMessage)
