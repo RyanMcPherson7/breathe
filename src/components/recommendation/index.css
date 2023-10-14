@@ -31,3 +31,14 @@
   width: 20px;
   height: 20px;
 }
+
+a {
+  color: var(--color-white);
+}
+
+@media (hover: hover) {
+  a:hover {
+    transition: filter 0.2s ease-in-out;
+    filter: brightness(60%);
+  }
+}

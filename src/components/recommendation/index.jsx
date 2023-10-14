@@ -104,9 +104,9 @@ const index = () => {
       default:
         return (
           <span>
-            silent Meditation (
+            Silent Meditation (
             <a
-              href="https://www.youtube.com/watch?v=maCdzhtGgGU&pp=ygUSd2Fsa2luZyBtZWRpdGF0aW9u"
+              href="https://www.youtube.com/watch?v=TpbgywrvAf0&pp=ygURc2lsZW50IG1lZGl0YWl0b24%3D"
               target="_blank"
               rel="noreferrer"
             >
