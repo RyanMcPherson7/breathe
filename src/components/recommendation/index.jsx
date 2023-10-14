@@ -140,7 +140,7 @@ const index = () => {
     }
 
     return <span>{sessionDuration} minutes per session</span>
-  }, [])
+  }, [age])
 
   const generateNumSessions = useCallback(() => {
     if (
@@ -151,7 +151,7 @@ const index = () => {
     }
 
     return <span>1 morning and 1 evening session</span>
-  }, [])
+  }, [meditationExperience])
 
   const generateGroupStyle = useCallback(() => {
     if (
@@ -163,7 +163,7 @@ const index = () => {
     }
 
     return <span>Completed by yourself</span>
-  }, [])
+  }, [rootCause])
 
   const handleResetClick = useCallback(() => {
     // reset form
