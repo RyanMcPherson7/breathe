@@ -39,3 +39,11 @@ export const questionOptions = {
   meditationExperience: ['Never', `I've tried it`, 'Often', 'Every day'],
   age: ['< 18', '18 - 25', '26 - 40', '41+']
 }
+
+export const questionPrompts = {
+  color: '1. What color best describes your mood today',
+  stressLevel: '2. On a scale of 1 to 10, how stressed did you feel today?',
+  rootCause: '3. What do you think is the root cause of your stress?',
+  meditationExperience: '4. Have you meditated before?',
+  age: '5. How old are you?'
+}

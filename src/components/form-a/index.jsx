@@ -1,4 +1,6 @@
+import { useCallback } from 'react'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { AiFillThunderbolt } from 'react-icons/ai'
 import Question from '../question'
 import {
@@ -13,10 +15,12 @@ import Radios from '../input-fields/radios'
 import Dropdown from '../input-fields/dropdown'
 import Slider from '../input-fields/slider'
 import ColorSelect from '../input-fields/color-select'
-import { questionOptions } from '../../constants'
+import { questionOptions, questionPrompts } from '../../constants'
 import './index.css'
 
 const index = () => {
+  const navigate = useNavigate()
+
   const color = useSelector((state) => state.form.color)
   const stressLevel = useSelector((state) => state.form.stressLevel)
   const rootCause = useSelector((state) => state.form.rootCause)
@@ -25,7 +29,30 @@ const index = () => {
   )
   const age = useSelector((state) => state.form.age)
 
-  const handleFormSubmit = () => {}
+  const handleFormSubmit = useCallback(() => {
+    const missingInputField = []
+
+    if (color === '') missingInputField.push(questionPrompts.color)
+    if (stressLevel === '') missingInputField.push(questionPrompts.stressLevel)
+    if (rootCause === '') missingInputField.push(questionPrompts.rootCause)
+    if (meditationExperience === '')
+      missingInputField.push(questionPrompts.meditationExperience)
+    if (age === '') missingInputField.push(questionPrompts.age)
+
+    if (missingInputField.length !== 0) {
+      let missingInputMessage =
+        'Please fill out the following questions so we can make an accurate recommendation: \n'
+
+      missingInputField.forEach((field) => {
+        missingInputMessage += `- ${field}\n`
+      })
+
+      alert(missingInputMessage)
+      return
+    }
+
+    navigate('/recommendation')
+  }, [color, stressLevel, rootCause, meditationExperience, age])
 
   return (
     <div id="form-a-container">
