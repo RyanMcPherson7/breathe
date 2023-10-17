@@ -1,0 +1,29 @@
+.color-select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.color-option {
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-check-icon {
+  width: 28px;
+  height: 28px;
+}
+
+@media (hover: hover) {
+  .color-option:hover {
+    cursor: pointer;
+    filter: brightness(75%);
+    transition: filter 0.2s ease-in-out;
+  }
+}
