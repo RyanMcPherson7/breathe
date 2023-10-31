@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { useCallback, useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { AiFillThunderbolt } from 'react-icons/ai'
@@ -21,6 +21,7 @@ import './index.css'
 const index = () => {
   const navigate = useNavigate()
 
+  const [submitIsDisabled, setSubmitIsDisabled] = useState(true)
   const color = useSelector((state) => state.form.color)
   const stressLevel = useSelector((state) => state.form.stressLevel)
   const rootCause = useSelector((state) => state.form.rootCause)
@@ -29,27 +30,18 @@ const index = () => {
   )
   const age = useSelector((state) => state.form.age)
 
+  // check if should disable submit button
+  useEffect(() => {
+    setSubmitIsDisabled(
+      color === '' ||
+        stressLevel === '' ||
+        rootCause === '' ||
+        meditationExperience === '' ||
+        age === ''
+    )
+  }, [color, stressLevel, rootCause, meditationExperience, age])
+
   const handleFormSubmit = useCallback(() => {
-    const missingInputField = []
-
-    if (color === '') missingInputField.push(questionPrompts.color)
-    if (stressLevel === '') missingInputField.push(questionPrompts.stressLevel)
-    if (rootCause === '') missingInputField.push(questionPrompts.rootCause)
-    if (meditationExperience === '')
-      missingInputField.push(questionPrompts.meditationExperience)
-    if (age === '') missingInputField.push(questionPrompts.age)
-
-    if (missingInputField.length !== 0) {
-      let missingInputMessage = 'Please fill out the following questions:\n'
-
-      missingInputField.forEach((field) => {
-        missingInputMessage += `${field}\n`
-      })
-
-      alert(missingInputMessage)
-      return
-    }
-
     navigate('/A/recommendation')
   }, [color, stressLevel, rootCause, meditationExperience, age])
 
@@ -105,7 +97,7 @@ const index = () => {
         text="Give me a recommendation"
         icon={AiFillThunderbolt}
         isGradient
-        isDisabled={false} // TODO: change function to account for input and dynamically change if button is disabled
+        isDisabled={submitIsDisabled}
         disabledToolTip="Please fill out the entire form to enable this button"
       />
     </div>
