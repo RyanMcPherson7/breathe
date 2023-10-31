@@ -41,7 +41,7 @@ export const questionOptions = {
 }
 
 export const questionPrompts = {
-  color: '1. What color best describes your mood today',
+  color: '1. What color best describes your mood today?',
   stressLevel: '2. On a scale of 1 to 10, how stressed did you feel today?',
   rootCause: '3. What do you think is the root cause of your stress?',
   meditationExperience: '4. Have you meditated before?',

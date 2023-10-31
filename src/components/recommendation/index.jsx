@@ -147,7 +147,7 @@ const index = () => {
       meditationExperience === questionOptions.meditationExperience[0] ||
       meditationExperience === questionOptions.meditationExperience[1]
     ) {
-      return <span>1 morning or evening</span>
+      return <span>1 morning or evening session</span>
     }
 
     return <span>1 morning and 1 evening session</span>
@@ -196,7 +196,7 @@ const index = () => {
           background: `linear-gradient(130deg, ${colorsHex.brandPurple} 50%, ${colorsHex[color]} 100%)`
         }}
       >
-        <h4>What we recommend</h4>
+        <h4>What we recommend:</h4>
         <p>
           <IoMdFlower className="recommendation-icon" />
           {generateMeditationStyle()}

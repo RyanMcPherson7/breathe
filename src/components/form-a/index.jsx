@@ -40,8 +40,7 @@ const index = () => {
     if (age === '') missingInputField.push(questionPrompts.age)
 
     if (missingInputField.length !== 0) {
-      let missingInputMessage =
-        'Please fill out the following questions:\n'
+      let missingInputMessage = 'Please fill out the following questions:\n'
 
       missingInputField.forEach((field) => {
         missingInputMessage += `${field}\n`
@@ -58,11 +57,11 @@ const index = () => {
     <div id="form-a-container">
       <h2>Let's take a breathe.</h2>
       <Question
-        promptText="1. What color best describes your mood today"
+        promptText={questionPrompts.color}
         inputField={<ColorSelect state={color} updateState={setColor} />}
       />
       <Question
-        promptText="2. On a scale of 1 to 10, how stressed did you feel today?"
+        promptText={questionPrompts.stressLevel}
         inputField={
           <Slider
             min={1}
@@ -73,7 +72,7 @@ const index = () => {
         }
       />
       <Question
-        promptText="3. What do you think is the root cause of your stress?"
+        promptText={questionPrompts.rootCause}
         inputField={
           <Dropdown
             options={questionOptions.rootCause}
@@ -82,7 +81,7 @@ const index = () => {
         }
       />
       <Question
-        promptText="4. Have you meditated before?"
+        promptText={questionPrompts.meditationExperience}
         inputField={
           <Radios
             options={questionOptions.meditationExperience}
@@ -92,7 +91,7 @@ const index = () => {
         }
       />
       <Question
-        promptText="5. How old are you?"
+        promptText={questionPrompts.age}
         inputField={
           <Radios
             options={questionOptions.age}
