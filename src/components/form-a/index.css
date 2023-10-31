@@ -17,3 +17,10 @@
     padding: 30px 70px;
   }
 }
+
+@media (min-width: 900px) {
+  #form-a-container h2 {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+}

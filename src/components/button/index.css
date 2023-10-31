@@ -18,7 +18,19 @@
 @media (hover: hover) {
   .button:hover {
     cursor: pointer;
-    filter: brightness(75%);
+    filter: brightness(60%);
     transition: filter 0.2s ease-in-out;
+  }
+}
+
+@media (min-width: 900px) {
+  .button {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+
+  .button-icon {
+    width: 24px;
+    height: 24px;
   }
 }

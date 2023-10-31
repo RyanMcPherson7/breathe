@@ -2,7 +2,7 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import { useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { FaRedoAlt } from 'react-icons/fa'
-import { IoMdFlower } from 'react-icons/io'
+import { PiFlowerLotusFill } from 'react-icons/pi'
 import { AiFillClockCircle } from 'react-icons/ai'
 import { MdNumbers } from 'react-icons/md'
 import { BiSolidGroup } from 'react-icons/bi'
@@ -198,7 +198,7 @@ const index = () => {
       >
         <h4>What we recommend:</h4>
         <p>
-          <IoMdFlower className="recommendation-icon" />
+          <PiFlowerLotusFill className="recommendation-icon" />
           {generateMeditationStyle()}
         </p>
         <p>

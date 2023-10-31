@@ -31,3 +31,22 @@ input[type='range'] {
     transition: filter 0.2s ease-in-out;
   }
 }
+
+@media (min-width: 900px) {
+  input[type='range'] {
+    width: 250px;
+  }
+
+  .slider-container {
+    gap: 20px;
+  }
+  
+  .slider-value {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .slider-value p {
+    font-size: 18px;
+  }
+}

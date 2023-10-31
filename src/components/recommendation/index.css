@@ -42,3 +42,30 @@ a {
     filter: brightness(60%);
   }
 }
+
+@media (min-width: 900px) {
+  #recommendation-container {
+    gap: 60px;
+  }
+
+  .recommendation {
+    padding: 28px 50px;
+    border-radius: 30px;
+    gap: 5px;
+  }
+
+  .recommendation h4 {
+    margin-bottom: 18px;
+    font-size: 30px;
+  }
+
+  .recommendation p {
+    gap: 10px;
+    font-size: 18px;
+  }
+
+  .recommendation-icon {
+    width: 25px;
+    height: 25px;
+  }
+}

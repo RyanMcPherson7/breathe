@@ -16,8 +16,16 @@ const index = ({ options, state, updateState }) => {
   return (
     <div className="radio-group">
       {options.map((option) => (
-        <label key={option} htmlFor={option}>
+        <label
+          key={option}
+          htmlFor={option}
+          style={{
+            borderBottom:
+              option === state ? '2px solid var(--color-purple)' : 'none'
+          }}
+        >
           <input
+            id={option}
             type="radio"
             value={option}
             checked={option === state}
