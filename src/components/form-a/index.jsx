@@ -105,6 +105,8 @@ const index = () => {
         text="Give me a recommendation"
         icon={AiFillThunderbolt}
         isGradient
+        isDisabled={false} // TODO: change function to account for input and dynamically change if button is disabled
+        disabledToolTip="Please fill out the entire form to enable this button"
       />
     </div>
   )

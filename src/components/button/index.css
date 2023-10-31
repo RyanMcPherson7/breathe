@@ -16,7 +16,7 @@
 }
 
 @media (hover: hover) {
-  .button:hover {
+  .button:not(:disabled):hover {
     cursor: pointer;
     filter: brightness(60%);
     transition: filter 0.2s ease-in-out;
