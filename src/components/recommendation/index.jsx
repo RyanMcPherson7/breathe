@@ -1,11 +1,12 @@
 import { useNavigate, useLocation } from 'react-router-dom'
-import { useCallback } from 'react'
+import { useCallback, useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { FaRedoAlt } from 'react-icons/fa'
 import { PiFlowerLotusFill } from 'react-icons/pi'
 import { MdNumbers } from 'react-icons/md'
 import { BiSolidGroup, BiSolidTimer } from 'react-icons/bi'
 import Button from '../button'
+import LoadingSpinner from '../loading-spinner'
 import { colorsHex, colors, questionOptions } from '../../constants'
 import {
   setStressLevel,
@@ -20,6 +21,7 @@ const index = () => {
   const location = useLocation()
   const dispatch = useDispatch()
 
+  const [isLoading, setIsLoading] = useState(true)
   const color = useSelector((state) => state.form.color)
   const stressLevel = useSelector((state) => state.form.stressLevel)
   const rootCause = useSelector((state) => state.form.rootCause)
@@ -181,6 +183,11 @@ const index = () => {
     location
   ])
 
+  // artificial simulated loading time
+  useEffect(() => {
+    setTimeout(() => setIsLoading(false), 2000)
+  }, [])
+
   return (
     <div id="recommendation-container">
       <Button
@@ -189,30 +196,35 @@ const index = () => {
         icon={FaRedoAlt}
         isGradient
       />
-      <div
-        className="recommendation"
-        style={{
-          background: `linear-gradient(130deg, ${colorsHex.brandPurple} 50%, ${colorsHex[color]} 100%)`
-        }}
-      >
-        <h4>What we recommend:</h4>
-        <p>
-          <PiFlowerLotusFill className="recommendation-icon" />
-          {generateMeditationStyle()}
-        </p>
-        <p>
-          <BiSolidTimer className="recommendation-icon" />
-          {generateSessionDuration()}
-        </p>
-        <p>
-          <MdNumbers className="recommendation-icon" />
-          {generateNumSessions()}
-        </p>
-        <p>
-          <BiSolidGroup className="recommendation-icon" />
-          {generateGroupStyle()}
-        </p>
-      </div>
+
+      {isLoading && <LoadingSpinner />}
+
+      {!isLoading && (
+        <div
+          className="recommendation"
+          style={{
+            background: `linear-gradient(130deg, ${colorsHex.brandPurple} 50%, ${colorsHex[color]} 100%)`
+          }}
+        >
+          <h4>What we recommend:</h4>
+          <p>
+            <PiFlowerLotusFill className="recommendation-icon" />
+            {generateMeditationStyle()}
+          </p>
+          <p>
+            <BiSolidTimer className="recommendation-icon" />
+            {generateSessionDuration()}
+          </p>
+          <p>
+            <MdNumbers className="recommendation-icon" />
+            {generateNumSessions()}
+          </p>
+          <p>
+            <BiSolidGroup className="recommendation-icon" />
+            {generateGroupStyle()}
+          </p>
+        </div>
+      )}
     </div>
   )
 }
