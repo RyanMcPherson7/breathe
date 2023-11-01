@@ -13,6 +13,8 @@
   padding: 20px 35px;
   border-radius: 30px;
   gap: 3px;
+  width: 330px;
+  height: 180px;
 }
 
 .recommendation h4 {
@@ -25,6 +27,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  font-size: 12px;
 }
 
 .recommendation-icon {
@@ -40,5 +43,38 @@ a {
   a:hover {
     transition: filter 0.2s ease-in-out;
     filter: brightness(60%);
+  }
+
+  .recommendation {
+    width: 400px;
+  }
+}
+
+@media (min-width: 900px) {
+  #recommendation-container {
+    gap: 60px;
+  }
+
+  .recommendation {
+    padding: 28px 50px;
+    border-radius: 30px;
+    gap: 5px;
+    width: 600px;
+    height: 250px
+  }
+
+  .recommendation h4 {
+    margin-bottom: 18px;
+    font-size: 30px;
+  }
+
+  .recommendation p {
+    gap: 10px;
+    font-size: 18px;
+  }
+
+  .recommendation-icon {
+    width: 25px;
+    height: 25px;
   }
 }

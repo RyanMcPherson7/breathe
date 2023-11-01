@@ -29,6 +29,7 @@
     "import/no-named-as-default": "off",
     "react/no-unescaped-entities": "off",
     "import/no-extraneous-dependencies": "off",
-    "arrow-body-style": "off"
+    "arrow-body-style": "off",
+    "no-alert": "off"
   }
 }

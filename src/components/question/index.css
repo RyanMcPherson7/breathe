@@ -2,11 +2,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .prompt-text {
   font-size: 14px;
   text-align: center;
   margin-bottom: 10px;
+}
+
+@media (min-width: 900px) {
+  .prompt-text {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  #question-container {
+    margin-bottom: 30px;
+  }
 }

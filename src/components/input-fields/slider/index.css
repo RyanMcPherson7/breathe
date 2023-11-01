@@ -1,6 +1,50 @@
 input[type='range'] {
+  /* these appearance toggles are very important to style the track and thumb */
+  -webkit-appearance: none;
+  appearance: none;
   border: none;
   width: 200px;
+  border-radius: 100px;
+}
+
+/* For WebKit (Chrome, Safari) */
+input[type='range']::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: var(--color-white);
+  height: 5px;
+  border-radius: 100px;
+}
+
+/* For Firefox */
+input[type='range']::-moz-range-track {
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--color-white);
+  height: 5px;
+  border-radius: 100px;
+}
+
+/* For WebKit (Chrome, Safari) */
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  margin-top: -7px;
+  border: solid 6px var(--color-purple);
+}
+
+/* For Firefox */
+input[type='range']::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  margin-top: -7px;
+  border: solid 6px var(--color-purple);
 }
 
 .slider-container {
@@ -21,13 +65,60 @@ input[type='range'] {
 }
 
 .slider-value p {
-  color: var(--color-white)
+  color: var(--color-white);
 }
 
 @media (hover: hover) {
   input[type='range']:hover {
     cursor: pointer;
-    filter: brightness(90%);
+    filter: brightness(60%);
     transition: filter 0.2s ease-in-out;
+  }
+}
+
+@media (min-width: 900px) {
+  input[type='range'] {
+    width: 250px;
+  }
+
+  .slider-container {
+    gap: 20px;
+  }
+
+  .slider-value {
+    width: 45px;
+    height: 45px;
+  }
+
+  .slider-value p {
+    font-size: 18px;
+  }
+
+  /* For WebKit (Chrome, Safari) */
+  input[type='range']::-webkit-slider-runnable-track {
+    height: 8px;
+    border-radius: 100px;
+  }
+
+  /* For Firefox */
+  input[type='range']::-moz-range-track {
+    height: 8px;
+    border-radius: 100px;
+  }
+
+  /* For WebKit (Chrome, Safari) */
+  input[type='range']::-webkit-slider-thumb {
+    height: 25px;
+    width: 25px;
+    margin-top: -8px;
+    border: solid 8px var(--color-purple);
+  }
+
+  /* For Firefox */
+  input[type='range']::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    margin-top: -7px;
+    border: solid 6px var(--color-purple);
   }
 }

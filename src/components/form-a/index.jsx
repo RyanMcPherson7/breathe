@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { useCallback, useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { AiFillThunderbolt } from 'react-icons/ai'
@@ -21,6 +21,7 @@ import './index.css'
 const index = () => {
   const navigate = useNavigate()
 
+  const [submitIsDisabled, setSubmitIsDisabled] = useState(true)
   const color = useSelector((state) => state.form.color)
   const stressLevel = useSelector((state) => state.form.stressLevel)
   const rootCause = useSelector((state) => state.form.rootCause)
@@ -29,40 +30,30 @@ const index = () => {
   )
   const age = useSelector((state) => state.form.age)
 
-  const handleFormSubmit = useCallback(() => {
-    const missingInputField = []
-
-    if (color === '') missingInputField.push(questionPrompts.color)
-    if (stressLevel === '') missingInputField.push(questionPrompts.stressLevel)
-    if (rootCause === '') missingInputField.push(questionPrompts.rootCause)
-    if (meditationExperience === '')
-      missingInputField.push(questionPrompts.meditationExperience)
-    if (age === '') missingInputField.push(questionPrompts.age)
-
-    if (missingInputField.length !== 0) {
-      let missingInputMessage =
-        'Please fill out the following questions:\n'
-
-      missingInputField.forEach((field) => {
-        missingInputMessage += `${field}\n`
-      })
-
-      alert(missingInputMessage)
-      return
-    }
-
-    navigate('/A/recommendation')
+  // check if should disable submit button
+  useEffect(() => {
+    setSubmitIsDisabled(
+      color === '' ||
+        stressLevel === '' ||
+        rootCause === '' ||
+        meditationExperience === '' ||
+        age === ''
+    )
   }, [color, stressLevel, rootCause, meditationExperience, age])
+
+  const handleFormSubmit = useCallback(() => {
+    navigate('/A/recommendation')
+  }, [navigate])
 
   return (
     <div id="form-a-container">
       <h2>Let's take a breathe.</h2>
       <Question
-        promptText="1. What color best describes your mood today"
+        promptText={questionPrompts.color}
         inputField={<ColorSelect state={color} updateState={setColor} />}
       />
       <Question
-        promptText="2. On a scale of 1 to 10, how stressed did you feel today?"
+        promptText={questionPrompts.stressLevel}
         inputField={
           <Slider
             min={1}
@@ -73,16 +64,17 @@ const index = () => {
         }
       />
       <Question
-        promptText="3. What do you think is the root cause of your stress?"
+        promptText={questionPrompts.rootCause}
         inputField={
           <Dropdown
             options={questionOptions.rootCause}
+            state={rootCause}
             updateState={setRootCause}
           />
         }
       />
       <Question
-        promptText="4. Have you meditated before?"
+        promptText={questionPrompts.meditationExperience}
         inputField={
           <Radios
             options={questionOptions.meditationExperience}
@@ -92,7 +84,7 @@ const index = () => {
         }
       />
       <Question
-        promptText="5. How old are you?"
+        promptText={questionPrompts.age}
         inputField={
           <Radios
             options={questionOptions.age}
@@ -103,9 +95,11 @@ const index = () => {
       />
       <Button
         handleClick={handleFormSubmit}
-        text="Give me a recommendation"
+        text="Recommend a plan"
         icon={AiFillThunderbolt}
         isGradient
+        isDisabled={submitIsDisabled}
+        disabledToolTip="Please fill out the entire form to enable this button"
       />
     </div>
   )
