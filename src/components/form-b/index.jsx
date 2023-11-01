@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi'
 import { AiFillThunderbolt } from 'react-icons/ai'
@@ -44,6 +44,29 @@ const index = () => {
     navigate('/B/recommendation')
   }, [navigate])
 
+  // check if should disable submit button
+  useEffect(() => {
+    switch (questionNumber) {
+      case 1:
+        setIsNextDisabled(color === '')
+        break
+      case 2:
+        setIsNextDisabled(stressLevel === '')
+        break
+      case 3:
+        setIsNextDisabled(rootCause === '')
+        break
+      case 4:
+        setIsNextDisabled(meditationExperience === '')
+        break
+      case 5:
+        setIsNextDisabled(age === '')
+        break
+      default:
+        console.log('invalid question number') // eslint-disable-line
+    }
+  }, [questionNumber, color, stressLevel, rootCause, meditationExperience, age])
+
   const renderQuestion = useCallback(() => {
     switch (questionNumber) {
       case 1:
@@ -74,6 +97,7 @@ const index = () => {
             inputField={
               <Dropdown
                 options={questionOptions.rootCause}
+                state={rootCause}
                 updateState={setRootCause}
               />
             }

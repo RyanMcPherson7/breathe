@@ -3,7 +3,7 @@ import { useCallback } from 'react'
 import { useDispatch } from 'react-redux'
 import './index.css'
 
-const index = ({ options, updateState }) => {
+const index = ({ options, state, updateState }) => {
   const dispatch = useDispatch()
 
   const handleOptionSelect = useCallback(
@@ -14,7 +14,7 @@ const index = ({ options, updateState }) => {
   )
 
   return (
-    <select onChange={handleOptionSelect}>
+    <select onChange={handleOptionSelect} value={state}>
       <option value="">Please select an option</option>
       {options.map((option) => (
         <option value={option} key={option}>
@@ -27,6 +27,7 @@ const index = ({ options, updateState }) => {
 
 index.propTypes = {
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  state: PropTypes.string.isRequired,
   updateState: PropTypes.func.isRequired
 }
 

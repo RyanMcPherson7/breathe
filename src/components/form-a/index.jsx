@@ -68,6 +68,7 @@ const index = () => {
         inputField={
           <Dropdown
             options={questionOptions.rootCause}
+            state={rootCause}
             updateState={setRootCause}
           />
         }
