@@ -3,9 +3,8 @@ import { useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { FaRedoAlt } from 'react-icons/fa'
 import { PiFlowerLotusFill } from 'react-icons/pi'
-import { AiFillClockCircle } from 'react-icons/ai'
 import { MdNumbers } from 'react-icons/md'
-import { BiSolidGroup } from 'react-icons/bi'
+import { BiSolidGroup, BiSolidTimer } from 'react-icons/bi'
 import Button from '../button'
 import { colorsHex, colors, questionOptions } from '../../constants'
 import {
@@ -202,7 +201,7 @@ const index = () => {
           {generateMeditationStyle()}
         </p>
         <p>
-          <AiFillClockCircle className="recommendation-icon" />
+          <BiSolidTimer className="recommendation-icon" />
           {generateSessionDuration()}
         </p>
         <p>
