@@ -43,7 +43,7 @@ const index = () => {
 
   const handleFormSubmit = useCallback(() => {
     navigate('/A/recommendation')
-  }, [color, stressLevel, rootCause, meditationExperience, age])
+  }, [navigate])
 
   return (
     <div id="form-a-container">
@@ -94,7 +94,7 @@ const index = () => {
       />
       <Button
         handleClick={handleFormSubmit}
-        text="Give me a recommendation"
+        text="Recommend a plan"
         icon={AiFillThunderbolt}
         isGradient
         isDisabled={submitIsDisabled}

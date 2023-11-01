@@ -1,0 +1,16 @@
+#form-b-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+#form-b-container h2 {
+  margin-bottom: 20px;
+}
+
+#form-b-nav-buttons {
+  width: 350px;
+  display: flex;
+}

@@ -25,7 +25,7 @@ const index = ({
         background: isGradient
           ? `linear-gradient(130deg, ${colorsHex.brandPurple} 30%, ${colorsHex[color]} 100%)`
           : colorsHex.brandPurple,
-        opacity: isDisabled ? '0.1' : '1'
+        opacity: isDisabled ? '0.2' : '1'
       }}
     >
       {isIconRight ? (
