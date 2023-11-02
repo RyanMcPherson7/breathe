@@ -7,6 +7,16 @@ breathe is a mindfulness recommender system that recommends meditation resources
 1. Install all dependencies with `npm i`
 2. Start the app on [http://localhost:3000](http://localhost:3000) with `npm start`
 
+## 🧪 Viewing Interface Designs A and B
+
+breathe was made to conduct a Human-Computer Interaction (HCI) study using a A/B testing
+- 🅰️ You can view design A by prefixing all your URL path with `/A/`
+  - `/A/` is the home screen for Design A
+  - `/A/form` is the main form screen for Design A
+  - `/A/recommendation` is the recommendation screen for Design A
+  - By default `/` will also show you Design A
+- 🅱️ Similarly, you can view design B by prefixing your URL path with `/B/`
+
 ## 🫧 Linting
 
 This project uses ESLint for linting and Prettier for code formatting
