@@ -9,7 +9,7 @@ breathe is a mindfulness recommender system that recommends meditation resources
 
 ## 🧪 Viewing Interface Designs A and B
 
-breathe was made to conduct a Human-Computer Interaction (HCI) study using a A/B testing
+breathe was made to conduct a Human-Computer Interaction (HCI) study using A/B testing
 - 🅰️ You can view design A by prefixing all your URL path with `/A/`
   - `/A/` is the home screen for Design A
   - `/A/form` is the main form screen for Design A
